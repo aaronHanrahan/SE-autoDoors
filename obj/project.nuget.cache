@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s0kpEYDKrHM=",
+  "dgSpecHash": "HKcYWTKkJ/c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aaron\\autoDoors\\autoDoors.csproj",
+  "projectFilePath": "C:\\users\\aaron\\SE-autoDoors\\autoDoors.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aaron\\.nuget\\packages\\mal.mdk2.pbanalyzers\\2.1.11\\mal.mdk2.pbanalyzers.2.1.11.nupkg.sha512",
     "C:\\Users\\Aaron\\.nuget\\packages\\mal.mdk2.pbpackager\\2.1.4\\mal.mdk2.pbpackager.2.1.4.nupkg.sha512",

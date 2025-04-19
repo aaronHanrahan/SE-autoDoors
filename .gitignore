@@ -1,0 +1,9 @@
+mdk/Script.cs
+.vscode/
+*.user
+*.suo
+*.exe
+*.dll
+bin/
+obj/
+*.log
