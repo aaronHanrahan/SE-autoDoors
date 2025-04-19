@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using VRage;
 using VRage.Collections;
@@ -34,6 +35,8 @@ namespace IngameScript
 
         public Program()
         {
+
+            Runtime.UpdateFrequency = UpdateFrequency.Update10;
             // The constructor, called only once every session and
             // always before any other method is called. Use it to
             // initialize your script. 
@@ -56,17 +59,51 @@ namespace IngameScript
             // needed.
         }
 
-        public void Main(string argument, UpdateType updateSource)
+       public void Main(string argument, UpdateType updateSource)
+{
+    // Get sensor group
+    var sensorGroup = GridTerminalSystem.GetBlockGroupWithName("Sensors");
+    if (sensorGroup == null)
+    {
+        Echo("No sensor group found.");
+        return;
+    }
+
+    List<IMySensorBlock> sensors = new List<IMySensorBlock>();
+    sensorGroup.GetBlocksOfType(sensors);
+
+    // Check if any sensor is detecting something
+    bool detected = sensors.Any(sensor => sensor.IsActive);
+
+    // Get door group
+    var doorGroup = GridTerminalSystem.GetBlockGroupWithName("Interior Doors");
+    if (doorGroup == null)
+    {
+        Echo("No door group found.");
+        return;
+    }
+
+    List<IMyDoor> doors = new List<IMyDoor>();
+    doorGroup.GetBlocksOfType(doors);
+
+    // Act based on detection
+    if (detected)
+    {
+        Echo("Sensor triggered: opening doors.");
+        foreach (var door in doors)
         {
-            // The main entry point of the script, invoked every time
-            // one of the programmable block's Run actions are invoked,
-            // or the script updates itself. The updateSource argument
-            // describes where the update came from. Be aware that the
-            // updateSource is a  bitfield  and might contain more than 
-            // one update type.
-            // 
-            // The method itself is required, but the arguments above
-            // can be removed if not needed.
+            door.OpenDoor();
         }
     }
+    else
+    {
+        Echo("No detection: closing doors.");
+        foreach (var door in doors)
+        {
+            door.CloseDoor();
+        }
+    }
+}
+
+}
 }

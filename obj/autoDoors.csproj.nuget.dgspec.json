@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aaron\\autoDoors\\autoDoors.csproj": {}
+    "C:\\users\\aaron\\SE-autoDoors\\autoDoors.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aaron\\autoDoors\\autoDoors.csproj": {
+    "C:\\users\\aaron\\SE-autoDoors\\autoDoors.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aaron\\autoDoors\\autoDoors.csproj",
+        "projectUniqueName": "C:\\users\\aaron\\SE-autoDoors\\autoDoors.csproj",
         "projectName": "autoDoors",
-        "projectPath": "C:\\Users\\Aaron\\autoDoors\\autoDoors.csproj",
+        "projectPath": "C:\\users\\aaron\\SE-autoDoors\\autoDoors.csproj",
         "packagesPath": "C:\\Users\\Aaron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aaron\\autoDoors\\obj\\",
+        "outputPath": "C:\\users\\aaron\\SE-autoDoors\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
